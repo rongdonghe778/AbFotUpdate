@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AB.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="info06" Type="System.String" Scope="User">
+      <Value Profile="(Default)">47 4D 06 N(hex) 请删除此部分并补充N位自定义数据</Value>
+    </Setting>
+    <Setting Name="info07" Type="System.String" Scope="User">
+      <Value Profile="(Default)">47 4D 07 N(hex) 请删除此部分并补充N位透传数据</Value>
+    </Setting>
+    <Setting Name="info05" Type="System.String" Scope="User">
+      <Value Profile="(Default)">47 4D 05 06 请删除此部分并补充6位地址</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

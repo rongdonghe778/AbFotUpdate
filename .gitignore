@@ -1,0 +1,7 @@
+bin/
+obj/
+.vs/
+*.user
+dist/cm2206.prefs
+dist/*.zip
+*_crash.log
