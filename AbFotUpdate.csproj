@@ -38,8 +38,17 @@
     <Resource Include="Assets\onway.png" />
   </ItemGroup>
   <Target Name="CopyToDist" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="BuiltAsm"/>
+    </GetAssemblyIdentity>
+    <PropertyGroup>
+      <DistVersion>$([System.Text.RegularExpressions.Regex]::Replace('%(BuiltAsm.Version)', '\.0$', ''))</DistVersion>
+      <DistExe>$(MSBuildProjectDirectory)\dist\CM2206_v$(DistVersion).exe</DistExe>
+    </PropertyGroup>
     <MakeDir Directories="$(MSBuildProjectDirectory)\dist"/>
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(MSBuildProjectDirectory)\dist" OverwriteReadOnlyFiles="true"/>
-    <Copy SourceFiles="$(TargetPath).config" DestinationFolder="$(MSBuildProjectDirectory)\dist" OverwriteReadOnlyFiles="true" Condition="Exists('$(TargetPath).config')"/>
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DistExe)" OverwriteReadOnlyFiles="true"/>
+    <Copy SourceFiles="$(TargetPath).config" DestinationFiles="$(DistExe).config" OverwriteReadOnlyFiles="true" Condition="Exists('$(TargetPath).config')"/>
+    <Delete Files="$(MSBuildProjectDirectory)\dist\CM2206.exe" Condition="Exists('$(MSBuildProjectDirectory)\dist\CM2206.exe')"/>
+    <Delete Files="$(MSBuildProjectDirectory)\dist\CM2206.exe.config" Condition="Exists('$(MSBuildProjectDirectory)\dist\CM2206.exe.config')"/>
   </Target>
 </Project>

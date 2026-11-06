@@ -2,7 +2,7 @@
 
 Windows 工具，用来给 CM2206 Dongle 升级 `.fot` 固件，也可以在产线上批量升级，或让 Dongle 进入 DUT。
 
-当前版本：**v1.1.0**。程序界面标题为「CM2206 固件升级」。直接运行 `dist\CM2206.exe`。电脑需要已安装 .NET Framework 4.8。
+当前版本：**v1.1.0**。程序界面标题为「CM2206 固件升级」。直接运行 `dist\CM2206_v1.1.0.exe`。文件名里的版本号和窗口标题一致。电脑需要已安装 .NET Framework 4.8。
 
 ## 更新说明
 
@@ -72,4 +72,4 @@ Windows 工具，用来给 CM2206 Dongle 升级 `.fot` 固件，也可以在产�
 dotnet build AbFotUpdate.csproj -c Release
 ```
 
-生成的程序在 `dist\CM2206.exe`。
+生成的程序在 `dist\CM2206_v1.1.0.exe`。版本号来自程序集版本，以后升版本再编译，文件名会跟着变。
